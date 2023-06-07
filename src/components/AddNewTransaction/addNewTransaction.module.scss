@@ -1,0 +1,165 @@
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // transform:scaleY(.01) scaleX(0);
+  // animation:unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+
+.modal {
+  width: 350px;
+  display: grid;
+  grid-template-rows: 1fr;
+  background-color: white;
+  padding: 20px;
+  row-gap: 15px;
+}
+
+.modal_btn {
+  justify-self: end;
+  background: #363062;
+  border-radius: 71px;
+  width: 150px;
+  height: 50px;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.modal_wrapper_btn{
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 5px;
+  
+  & > button {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    transition: background-color .3s, border-color .3s, color .3s, box-shadow .3s, filter .3s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 16px 14px 18px;
+    color: #616467;
+    box-shadow: inset 0 0 0 2px #616467;
+    background-color: transparent;
+    height: 48px;
+    &:hover{
+        color: #fff;
+        background-color: #3a84ce;
+    }
+    &:last-child {
+      &:hover{
+        color: #fff;
+        background-color: #9d0909;
+      }
+    }
+  }
+  }
+
+.modal_wrapper {
+  text-align: center;
+
+  input {
+    margin-top: 10px;
+    box-shadow: inset #abacaf 0 0 0 2px;
+    border: 0;
+    background: rgba(0, 0, 0, 0);
+    appearance: none;
+    width: 80%;
+    position: relative;
+    border-radius: 3px;
+    padding: 9px 12px;
+    line-height: 1.4;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 400;
+    height: 20px;
+    transition: all .2s ease;
+    &:hover{
+        box-shadow: 0 0 0 0 #fff inset, #3a84ce 0 0 0 2px;
+    }
+    &:focus{
+        background: #fff;
+        outline: 0;
+        box-shadow: 0 0 0 0 #fff inset, #3a84ce 0 0 0 3px;
+    }
+
+  }
+}
+
+.one {
+  transform:scaleY(.05) scaleY(.03) scaleY(.01) scaleX(0);
+  animation:unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+  .modal-background {
+    .modal {
+      transform:scale(0);
+      animation: zoomIn .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    }
+  }
+  &.out {
+    transform:scale(1);
+    animation:unfoldOut 1s .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    .modal-background {
+      .modal {
+        animation: zoomOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+      }
+    }
+  }
+}
+
+@keyframes unfoldIn {
+  0% {
+    transform:scaleY(.005) scaleX(0);
+  }
+  50% {
+    transform:scaleY(.005) scaleX(1);
+  }
+  100% {
+    transform:scaleY(1) scaleX(1);
+  }
+}
+
+@keyframes unfoldOut {
+  0% {
+    transform:scaleY(1) scaleX(1);
+  }
+  50% {
+    transform:scaleY(.005) scaleX(1);
+  }
+  100% {
+    transform:scaleY(.005) scaleX(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform:scale(0);
+  }
+  100% {
+    transform:scale(1);
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform:scale(1);
+  }
+  100% {
+    transform:scale(0);
+  }
+}

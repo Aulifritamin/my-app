@@ -1,0 +1,29 @@
+.content {
+  display: grid;
+  grid-area: content;
+  margin-right: 25px;
+  margin-left: 25px;
+  margin-top: 30px;
+}
+.analitics_wrapper {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(4, 1fr);
+  height: 155px;
+}
+.card_detail {
+  display: grid;
+  grid-template-columns: 1fr 30%; 
+  grid-template-rows: 15% 1fr;
+  grid-template-areas: 
+"header header"
+"cardDetail cardGraph";
+  column-gap: 20px;
+  margin-top: 20px;
+  height: 220px;
+  background: #FFFFFF;
+  border: 1px solid rgba(109, 125, 147, 0.15);
+  box-shadow: 4px 4px 20px -10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+

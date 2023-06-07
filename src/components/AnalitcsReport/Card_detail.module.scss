@@ -1,0 +1,36 @@
+.card_overview {
+  margin-top: 15px;
+  margin-left: 15px;
+  display: grid;
+  grid-area: cardDetail;
+  grid-template-columns: 25% 25% 1fr;
+  gap: 5px;
+  grid-template-areas: 
+  "cardname bankname mounthlylimits"
+}
+
+.card_overview_detail {
+  margin-top: 15px;
+  margin-left: 15px;
+  display: grid;
+  grid-area: header;
+ }
+
+.card_informations {
+  display: grid;
+  margin-left: 10px;
+  &_wrapper {
+    p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 27px;
+      color: #000000;
+    }
+
+    div {
+      font-size: 12px;
+      line-height: 10px;
+      color: #7C7C7C;
+    }
+  }
+}

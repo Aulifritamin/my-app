@@ -1,0 +1,14 @@
+.container {
+  background: #F9F9F9;
+  /* width: 1040px; */
+  margin: 0 auto;
+  /* height: 100vh; */
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr 0.5fr;
+  grid-template-rows: 100px 1fr 70px;
+  grid-template-areas:
+    'sidebar header header header'
+    'sidebar content content rightsidebard'
+    'sidebar footer footer footer'
+  ;
+}
