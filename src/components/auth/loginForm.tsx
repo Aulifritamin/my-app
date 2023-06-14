@@ -2,7 +2,7 @@ import React, { ReactEventHandler, useState } from 'react';
 import styles from './LoginForm.module.scss';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { firebaseAuth } from '../../firebase/firebase';
-import { useNavigate } from'react-router-dom';
+import { Link, useNavigate } from'react-router-dom';
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -56,7 +56,7 @@ const LoginForm = () => {
           Login
         </button>
         <p>
-          Don't have an account? <a href="/register">Sign up</a>
+          Don't have an account? <Link to="/register">Sign up</Link>
         </p>
       </form>
     </div>
