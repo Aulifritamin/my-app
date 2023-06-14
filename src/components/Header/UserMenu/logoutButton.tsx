@@ -1,4 +1,5 @@
-import { firebaseAuth } from "../../firebase/firebase";
+import { firebaseAuth } from "../../../firebase/firebase";
+import styles from './logoutButton.module.scss'
 
 const LogoutButton = () => {
   const handleLogout = () => {
@@ -12,7 +13,7 @@ const LogoutButton = () => {
   };
 
   return (
-    <button onClick={handleLogout}>
+    <button className={styles.button_logout} onClick={handleLogout}>
       Выйти
     </button>
   );

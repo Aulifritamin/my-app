@@ -3,6 +3,7 @@ import { collection, deleteDoc, doc } from "firebase/firestore";
 import { firebaseAuth, firestore } from "../../firebase/firebase";
 import { BudgetData } from "types/budgetFormTypes";
 import { useAppDispatch } from "app/hooks";
+import styles from './deleteButton.module.scss'
 
 interface DeleteButtonProps {
   transaction: BudgetData
@@ -31,8 +32,7 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({ transaction }) => {
   };
 
   return (
-    <button onClick={handleDelete}>
-      Удалить
+    <button className={styles.delete_button} onClick={handleDelete}>
     </button>
   );
 };

@@ -2,7 +2,7 @@ import styles from "./Content.module.scss";
 import { AddNewTransactionModal } from "../AddNewTransaction/addNewTransaction";
 import Dashboard from "components/Dashboard/Dashboard";
 import { firebaseAuth, firestore } from "../../firebase/firebase";
-import { RootState, store } from "app/store";
+import { RootState} from "app/store";
 import { useSelector } from "react-redux";
 import { addTransactionsFromDb } from "components/AddNewTransaction/budgetSlice";
 import {
@@ -79,7 +79,9 @@ export const Content = () => {
       ) : (
         <>
           <div>Hello, {userName?.displayName}</div>
-          <AddNewTransactionModal />
+          <div className={styles.add_new_buttons}>
+            <AddNewTransactionModal />
+          </div>
           <div className={styles.analitics_wrapper}>
             <Dashboard />
           </div>

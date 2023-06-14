@@ -2,12 +2,11 @@ import { Header } from "components/Header";
 import "./App.css";
 import { Sidebar } from "components/Sidebar";
 import { Content } from "components/Content";
-import Login from "components/auth/login";
 import { useState, useEffect } from "react";
 import { firebaseAuth } from "../../firebase/firebase";
 import { browserSessionPersistence } from "firebase/auth";
-import LoginForm from "components/auth/login1";
-import RegistrationForm from "components/auth/register1";
+import LoginForm from "components/auth/loginForm";
+import HomePage from "components/HomePage/HomePage";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -42,12 +41,8 @@ const App = () => {
         </div>
       ) : (
         <div className="container">
-          <Header />
-          <Sidebar />
-          {/* <Login /> */}
-          {/* <LoginForm /> */}
-          <RegistrationForm />
-          </div>
+          <HomePage />
+        </div>
       )}
     </>
   );

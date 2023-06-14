@@ -25,7 +25,7 @@ export const Activity = () => {
           className={`${styles.table_row} ${styles.appear_animation}`}
         >
           <div className={`${styles.col} ${styles.col_1}`}>{index + 1}</div>
-          <div className={`${styles.col} ${styles.col_2}`}>{item.spentWhere}</div>
+          <div className={`${styles.col} ${styles.col_2}`}>{item.spentWhere.toUpperCase()}</div>
           <div className={`${styles.col} ${styles.col_3}`}>${item.amountSpent}</div>
           <div className={`${styles.col} ${styles.col_4}`}>{item.date}</div>
 					<DeleteButton transaction={item}/>

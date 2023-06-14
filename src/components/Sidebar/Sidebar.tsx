@@ -1,4 +1,4 @@
-import LogoutButton from "components/auth/logoutButton";
+import LogoutButton from "components/Header/UserMenu/logoutButton";
 import styles from "./Sidebar.module.scss";
 
 interface SidebarProps {}
@@ -7,12 +7,10 @@ export const Sidebar = ({}: SidebarProps) => (
   <div className={styles.sidebar}>
     <p>Header LOGO</p>
     <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li>5</li>
-      <li>6</li>
+      <li>Dashboard</li>
+      <li>Registestation</li>
+      <li>Login</li>
+      <li>setting</li>
     </ul>
     <LogoutButton/>
   </div>

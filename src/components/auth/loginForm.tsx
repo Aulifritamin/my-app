@@ -2,8 +2,10 @@ import React, { ReactEventHandler, useState } from 'react';
 import styles from './LoginForm.module.scss';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { firebaseAuth } from '../../firebase/firebase';
+import { useNavigate } from'react-router-dom';
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -13,6 +15,7 @@ const LoginForm = () => {
       .then((userCredential: { user: any; }) => {
         // Успешный вход
         const user = userCredential.user;
+        navigate('/dashboard')
         console.log('Вход выполнен:', user);
       })
       .catch((error: any) => {
@@ -52,6 +55,9 @@ const LoginForm = () => {
         <button onClick={handleSignIn} type="submit" className={styles.button}>
           Login
         </button>
+        <p>
+          Don't have an account? <a href="/signup">Sign up</a>
+        </p>
       </form>
     </div>
   );

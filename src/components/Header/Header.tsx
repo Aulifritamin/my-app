@@ -1,8 +1,10 @@
 import styles from "./Header.module.scss";
+import UserMenu from "./UserMenu/UserMenu";
+
 
 export const Header = () => (
   <div className={styles.header}>
     <p>my wallet</p>
-    <p>user panel</p>
+    <UserMenu/>
   </div>
 );
