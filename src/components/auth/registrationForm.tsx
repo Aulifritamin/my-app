@@ -2,8 +2,10 @@ import React, { ReactEventHandler, useState } from 'react';
 import styles from './RegistrationForm.module.scss';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { firebaseAuth } from '../../firebase/firebase';
+import { Link, useNavigate } from 'react-router-dom';
 
 const RegistrationForm = () => {
+  const navigate = useNavigate()
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -17,6 +19,7 @@ const RegistrationForm = () => {
         console.log('Регистрация выполнена:', user);
   
         updateProfile(user, { displayName: name.toUpperCase() })
+        navigate('/dashboard')
       })
       .catch((error: any) => {
         // Обработка ошибки
@@ -69,6 +72,9 @@ const RegistrationForm = () => {
         <button onClick={handleSignUp} type="submit" className={styles.button}>
           Register
         </button>
+        <p>
+          Already have an account? <Link to="/login">Sign in</Link>
+        </p>
       </form>
     </div>
   );
